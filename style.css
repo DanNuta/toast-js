@@ -1,0 +1,46 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.toast-container {
+  position: fixed;
+  margin: 10px;
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.toast-container[data-position^="top-"] {
+  top: 10px;
+}
+
+.toast-container[data-position$="-right"] {
+  right: 10px;
+}
+
+.toast-container[data-position$="-left"] {
+  left: 10px;
+}
+
+.toast-container[data-position^="bottom-"] {
+  bottom: 10px;
+}
+
+.toast {
+  border: 1px solid black;
+  background-color: white;
+  border-radius: 15px;
+  padding: 1rem;
+  position: relative;
+  cursor: pointer;
+}
+
+.toast:after {
+  content: "\271C";
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
