@@ -1,5 +1,6 @@
 html,
-body {
+body,
+p {
   margin: 0;
   padding: 0;
 }
@@ -29,6 +30,14 @@ body {
   bottom: 10px;
 }
 
+.toast-container[data-position$="-right"] > * {
+  transform: translateX(110%);
+}
+
+.toast-container[data-position$="-left"] > * {
+  transform: translateX(-110%);
+}
+
 .toast {
   border: 1px solid black;
   background-color: white;
@@ -36,11 +45,29 @@ body {
   padding: 1rem;
   position: relative;
   cursor: pointer;
+  transition: transform 250ms ease-in-out;
+  position: relative;
+  z-index: 1;
 }
 
-.toast:after {
+.toast.show {
+  transform: translateX(0);
+}
+
+.toast.can-close:after {
   content: "\271C";
   position: absolute;
   top: 10px;
   right: 10px;
+}
+
+.progress-bar {
+  position: absolute;
+  height: 5px;
+  left: 0;
+  right: 0;
+  width: 100%;
+  background-color: red;
+  bottom: 0;
+  z-index: -1;
 }
